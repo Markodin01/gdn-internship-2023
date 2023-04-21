@@ -21,16 +21,16 @@ export class ExchangeRateComponent implements OnInit {
 
   getExchangeRate() {
     this.apiService.getAverageExchangeRate(this.currency, this.date).subscribe((data: any) => {
-      this.averageRate = data.average_rate;
+      this.averageRate = data.rate;
     });
   }
   getMinMax() {
-    this.apiService.getAverageExchangeRate(this.currency, this.num).subscribe((data: any) => {
+    this.apiService.getMinMax(this.currency, this.num).subscribe((data: any) => {
       this.minMax = data.minMax;
     });
   }
   getMajorDiff() {
-    this.apiService.getAverageExchangeRate(this.currency, this.num).subscribe((data: any) => {
+    this.apiService.getMajorDifference(this.currency, this.num).subscribe((data: any) => {
       this.majorDiff = data.majorDiff;
     });
   }

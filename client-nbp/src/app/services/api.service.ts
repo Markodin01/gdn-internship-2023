@@ -10,6 +10,21 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getAverageExchangeRate(currency: string, date: string) {
-    return this.http.get(`${this.baseUrl}/exchange-rate/${currency}/${date}`);
+    return this.http.get(`${this.baseUrl}/exchanges/${currency}/${date}`);
+  }
+
+  getMinMax(currency: string, date: string) {
+    return this.http.get(`${this.baseUrl}/exchanges/${currency}/${date}`);
+  }
+
+  getMajorDifference(currency: string, date: string) {
+    return this.http.get(`${this.baseUrl}/exchanges/${currency}/${date}`);
   }
 }
+
+
+
+
+
+
+
