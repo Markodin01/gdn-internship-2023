@@ -1,0 +1,22 @@
+<h1>NBP Exchanges Service</h1>
+<form>
+  <label>Currency:</label>
+  <input type="text" [(ngModel)]="currency" name="currency">
+  <br><br>
+  <label>Date:</label>
+  <input type="date" [(ngModel)]="date" name="date">
+  <br><br>
+  <button type="button" (click)="getExchangeRate()">Get Average Rate</button>
+  <button type="button" (click)="getMinMax()">Get Max Min Average</button>
+  <button type="button" (click)="getMajorDiff()">Get Major Difference</button>
+</form>
+<div *ngIf="averageRate">
+  <p>Average Rate: {{averageRate}}</p>
+</div>
+<div *ngIf="minMax">
+  <p>Min Max Average: {{minMax}}</p>
+</div>
+<div *ngIf="majorDiff">
+  <p>Major Difference: {{majorDiff}}</p>
+</div>
+
