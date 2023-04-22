@@ -2,11 +2,11 @@ from flask import Flask, jsonify, request
 from nbp_handler import get_average_exchange_rate, get_max_min_average, get_major_difference
 from flask_cors import CORS
 
-#from instance.config import Config
+from config import Config
 
 app = Flask(__name__)
 CORS(app)
-#app.config.from_object(Config)
+app.config.from_object(Config)
 
 @app.route('/exchanges/<currency>/<date>')
 def get_average_exchange_rate_route(currency, date):
@@ -30,4 +30,4 @@ def get_major_difference_route(currency, n):
     return jsonify(result)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=5000)
