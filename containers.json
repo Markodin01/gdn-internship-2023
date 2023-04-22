@@ -1,8 +1,8 @@
 {
     "nbp-api": {
-        "image": ":nbp-api.api.11",
+        "image": ":nbp-api.api.14",
         "ports": {
-            "5000": "HTTP"
+            "8080": "HTTP"
         }
     }
 }
