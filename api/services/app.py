@@ -14,7 +14,7 @@ app.config.from_object(Config)
 
 # Define a route for getting the average exchange rate for a currency and date
 @app.route('/exchanges/<currency>/<date>')
-def get_average_exchange_rate_route(currency, date):
+def get_average_exchange_rate_route(currency, date) -> float:
     # Call the get_average_exchange_rate function from nbp_handler to get the rate
     rate = get_average_exchange_rate(currency, date)
     # If the rate is None (i.e. data is not available), return a 404 error message
@@ -25,7 +25,7 @@ def get_average_exchange_rate_route(currency, date):
 
 # Define a route for getting the max, min, and average exchange rates for a currency over a specified number of days
 @app.route('/exchanges/<currency>/max-min/<int:n>')
-def get_max_min_average_route(currency, n):
+def get_max_min_average_route(currency, n) -> dict:
     # Call the get_max_min_average function from nbp_handler to get the result
     result = get_max_min_average(currency, n)
     # If the result is None (i.e. data is not available), return a 404 error message
@@ -36,7 +36,7 @@ def get_max_min_average_route(currency, n):
 
 # Define a route for getting the major differences in exchange rates for a currency over a specified number of days
 @app.route('/exchanges/<currency>/major-difference/<int:n>')
-def get_major_difference_route(currency, n):
+def get_major_difference_route(currency, n) -> float:
     # Call the get_major_difference function from nbp_handler to get the result
     result = get_major_difference(currency, n)
     # If the result is None (i.e. data is not available), return a 404 error message
