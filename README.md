@@ -31,25 +31,40 @@ Given a currency code and the number of last quotations, returns the major diffe
 Examples
 --------
 
+
+
 Here are some examples of how to use the functions:
 
-`from app import get_average_exchange_rate, get_max_min_average, get_major_difference
+```python:
+from app import get_average_exchange_rate, get_max_min_average, get_major_difference
+```
 
 # Get the average exchange rate for USD on January 1, 2022
+
+```python:
 rate = get_average_exchange_rate('USD', '2022-01-01')
+
 print(f'The average exchange rate for USD on January 1, 2022 was {rate}')
+```
 
 # Get the max, min, and average exchange rates for EUR over the last 30 days
+
+```python:
 rates = get_max_min_average('EUR', 30)
+
 print(f'The max exchange rate for EUR over the last 30 days was {rates["max"]}')
+
 print(f'The min exchange rate for EUR over the last 30 days was {rates["min"]}')
+
 print(f'The average exchange rate for EUR over the last 30 days was {rates["average"]}')
+```
 
 # Get the major difference between the buy and sell rates for GBP over the last 7 days
+
+```python:
 diff = get_major_difference('GBP', 7)
-print(f'The major difference between the buy and sell rates for GBP over the last 7 days was {diff}')`
-
-
+print(f'The major difference between the buy and sell rates for GBP over the last 7 days was {diff}')
+```
 
 License
 -------
